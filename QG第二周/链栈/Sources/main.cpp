@@ -1,14 +1,14 @@
 #include "MyLinkedStack.hpp"
 void Menu()
 {
-    cout << "*********************************************" << endl;
-    cout << "********** 1、  向栈顶加入元素     **********" << endl;
-    cout << "********** 2、  从栈顶弹出元素     **********" << endl;
-    cout << "********** 3、  查看栈顶元素       **********" << endl;
-    cout << "********** 4、  查看栈中的元素个数 **********" << endl;
-    cout << "********** 5、     清空栈          **********" << endl;
-    cout << "********** 6、    退出系统         **********" << endl;
-    cout << "*********************************************" << endl;
+    cout << "*******************************************" << endl;
+    cout << "********** 1、  向栈加入元素     **********" << endl;
+    cout << "********** 2、  从栈弹出元素     **********" << endl;
+    cout << "********** 3、  查看栈顶元素     **********" << endl;
+    cout << "********** 4、  查看栈的元素个数 **********" << endl;
+    cout << "********** 5、     清空栈        **********" << endl;
+    cout << "********** 6、     退出系统      **********" << endl;
+    cout << "*******************************************" << endl;
 }
 
 int main() 
@@ -30,7 +30,7 @@ int main()
         case 2:
             try 
             {
-                int popped = stack.pop();
+                const int popped = stack.pop();
                 cout << "弹出的元素为: " << popped << endl;
             }
             catch (const out_of_range& e) 
@@ -41,8 +41,8 @@ int main()
         case 3:
             try
             {
-                int val = stack.peek();
-                cout << "栈顶的元素为：" << val << endl;
+               const int value= stack.top();
+                cout << "栈顶的元素为：" << value << endl;
             }
             catch (const out_of_range& e)
             {
@@ -53,7 +53,7 @@ int main()
             cout << "栈中的元素个数为：" << stack.size()<< endl;
             break;
         case 5:
-            stack.clearStack();
+            stack.clear();
             cout << "栈已清空！" << endl;
             break;
         case 6:
@@ -68,3 +68,4 @@ int main()
     }
     return 0;
 }
+
