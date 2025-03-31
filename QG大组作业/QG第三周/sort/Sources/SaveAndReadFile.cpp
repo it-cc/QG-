@@ -4,12 +4,14 @@
 
 #include "SaveAndReadFile.h"
 
+//保存文件
 void SaveAndReadFile::saveData(const vector<int>& data)
 {
      ofstream file;
      file.open("data.txt");
      if (file.is_open())
      {
+          //保存数据
           for (auto num:data)
           {
                file<<num<<' ';
@@ -23,6 +25,7 @@ void SaveAndReadFile::saveData(const vector<int>& data)
      }
 }
 
+//读取文件
 void SaveAndReadFile::readData(vector<int>& data)
 {
      ifstream file;
@@ -30,6 +33,7 @@ void SaveAndReadFile::readData(vector<int>& data)
      if (file.is_open())
      {
           int num;
+          //读取数据
           while (file>>num)
           {
                data.push_back(num);

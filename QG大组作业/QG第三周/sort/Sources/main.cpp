@@ -12,8 +12,8 @@
 int main()
 {
      srand(time(nullptr));
-     vector<int> data;
-     vector<vector<int>> allData;
+     vector<int> data;//大数据量数组
+     vector<vector<int>> allData;//大量小数据量数组
      long long timeInsertSort;
      long long timeQuickSort;
      long long timeMergeSort;
@@ -28,6 +28,7 @@ int main()
           switch(option)
           {
                case 1:
+                    //生成10000,50000,200000个大数据量
                     data=RandomData::generateRandomData(10000);
                     cout<<"生成成功！"<<endl;
                     break;
@@ -40,14 +41,18 @@ int main()
                     cout<<"生成成功！"<<endl;
                     break;
                case 4:
+                    //生成100k个100个的小数据
                     allData=RandomData::generateLargeAmountOfSmallData(100000);
                     break;
                case 5:
-                    //不同的大数据量
+                    //大数据量
                     try
                     {
+                         //记录排序时间
                          timeInsertSort = RandomData::testSortTime(data,InsertSort::sort);
                          cout << "大数据量下，插入排序耗时: " << timeInsertSort << "ms\n";
+                         //打乱数据，方便重复排序
+                         //case 5-9同理
                          shuffle(data.begin(), data.end(), default_random_engine());
                          cout<<"成功打乱大数据量数组！可重复排序"<<endl;
                     }
@@ -69,7 +74,7 @@ int main()
                     }
                     break;
                case 6:
-                    //不同的大数据量
+                    //大数据量
                     try
                     {
                          timeQuickSort = RandomData::testSortTime(data,QuickSort::sort);
@@ -95,7 +100,7 @@ int main()
                     }
                     break;
                case 7:
-                    //不同的大数据量
+                    //大数据量
                     try
                     {
                          timeMergeSort = RandomData::testSortTime(data,MergeSort::sort);
@@ -121,7 +126,7 @@ int main()
                     }
                     break;
                case 8:
-                    //不同的大数据量
+                    //大数据量
                     try
                     {
                          timeCountSort=RandomData::testSortTime(data,CountSort::sort);
@@ -147,7 +152,7 @@ int main()
                     }
                     break;
                case 9:
-                    //不同的大数据量
+                    //大数据量
                     try
                     {
                          timeRadixSort_LSD=RandomData::testSortTime(data,RadixSort_LSD::sort);

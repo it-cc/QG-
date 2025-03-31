@@ -4,6 +4,7 @@
 
 #include "QuickSortNonRecursive.h"
 
+//分区函数
 int QuickSortNonRecursive::partition(std::vector<int> &arr, int left, int right)
 {
      int pivot = arr[right];
@@ -20,6 +21,7 @@ int QuickSortNonRecursive::partition(std::vector<int> &arr, int left, int right)
      return i + 1;
 }
 
+//快排非递归版
 void QuickSortNonRecursive::quickSortNonRecursive(std::vector<int> &arr)
 {
      int n = arr.size();

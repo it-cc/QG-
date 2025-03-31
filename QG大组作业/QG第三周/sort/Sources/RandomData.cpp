@@ -4,13 +4,14 @@
 
 #include "RandomData.h"
 
+//生成size个随机数
 vector<int> RandomData::generateRandomData(int size)
 {
      vector<int> data(size);
-
+     //生成随机数
      random_device rd;
      mt19937 gen(rd());
-     uniform_int_distribution<> dis(-50000, 50000);
+     uniform_int_distribution<> dis(-50000, 50000);//随机数范围：-50000~50000
      for (int i = 0; i < size; ++i)
      {
           data[i] = dis(gen);;
@@ -18,7 +19,7 @@ vector<int> RandomData::generateRandomData(int size)
      return data;
 }
 
-
+//生成100*size个大量小数据量
 vector<vector<int>> RandomData::generateLargeAmountOfSmallData(int size)
 {
      vector<vector<int>> allData;
